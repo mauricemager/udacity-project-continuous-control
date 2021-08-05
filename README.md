@@ -2,26 +2,29 @@
 
 [image1]: https://video.udacity-data.com/topher/2018/June/5b1ea778_reacher/reacher.gif "Trained Agent"
 
-# Train a Unity Environment (Banana field) using Deep Q-learning (DQN)
-
-## The Environment
-
-This project works with the Unity ML-Agent Reacher Environment. In this environment, a double-jointed arm can move to target locations. A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
-
-The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
+# Train a Unity Environment (Reacher x 20) using Deep Deterministic Policy Gradient (DDPG)
+This repository contains the code and report for the second project: continuous control from the Udacity Deep Reinforcement
+Learning Nanodegree
 
 
+## Introduction
+
+This project works with the Unity ML-Agent Reacher Environment. In this environment, 
+a double-jointed arm can move to target locations. A reward of +0.1 is provided for each step that the 
+agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at 
+the target location for as many time steps as possible.
+
+The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities 
+of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry 
+in the action vector should be a number between -1 and 1.
+
+This project aims to solve the second version of the assignment which contains 20 parallel agents. 
+The environment is considered solved, when the average (over 100 episodes) of the average scores of all 20 agents
+is at least +30.
 
 
 ![Reacher Environment][image1]
 
-
-- **`0`** - move forward.
-- **`1`** - move backward.
-- **`2`** - turn left.
-- **`3`** - turn right.
-
-The task is episodic, the environment is considered solved when the trained agent achieves an average score of +13 over 100 consecutive episodes.
 
 ## Getting Started
 
@@ -66,19 +69,21 @@ The task is episodic, the environment is considered solved when the trained agen
 
 6. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
 
-    - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux.zip)
-    - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher.app.zip)
-    - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86.zip)
-    - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86_64.zip)
+    - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
+    - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
+    - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
+    - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip)
     
-    (_For Windows users_) Check out [this link](https://support.microsoft.com/en-us/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64) if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
+    (_For Windows users_) Check out [this link](https://support.microsoft.com/en-us/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64) 
+if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
 
     (_For AWS or headless machines_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md))
-, then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux_NoVis.zip) to obtain the environment.
+, then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux_NoVis.zip) to obtain the environment.
 
 
-7. Place the downloaded `Banana` directory in the `data` directory and make sure the path to the `Banana.x86_64` file matching to your system in cell 2 of the Navigation notebook
+7. Place the downloaded `Reacher` directory in the `data` directory and make sure the path to the `Reacher.x86_64` 
+file matches to your system in cell 2 of the Continuous_Control notebook
 
 
-8. Run all the cells of the `Navigation.ipynb` to see training and evaluation of the model
+8. Run all the cells of the `Continuous_Control.ipynb` to see training and evaluation of the model
 
